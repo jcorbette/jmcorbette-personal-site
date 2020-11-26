@@ -167,8 +167,8 @@ td {
 .col-3-1{
 	width: 100%;
 	margin: 0;
-	padding: 2em;
-	background-color: #555759;
+	padding: 2em 0.8em;
+  background-color: #555759;
 }
 
 .fundamentals:last-child {
@@ -214,7 +214,7 @@ td {
 
 .footer-container {
 	position: relative;
-	padding: 1em;
+	padding: 0.5em;
 	color: #D2D2D3;
 	background-color: #2D3032;
 }
@@ -228,7 +228,7 @@ td {
 	display: flex;
 	flex-direction: column;
 	max-width: 90%;
-	padding: 2.5em 1.5em;
+	padding: 2.5em 1em;
 	background-color: rgba(45, 48, 50, 0.825);
 }
 
@@ -257,9 +257,17 @@ td {
   margin: 1em;
 }
 
-.portfolio-description p {
-	font-size: 0.6em;
-  margin: 1em;
+
+@media (max-width: 30rem) {
+	.portfolio-description h1 {
+		font-size: 0.5rem;
+	}
+}
+
+@media (min-width: 30rem) {
+	.portfolio-description h1 {
+		font-size: 0.8rem;
+	}
 }
 
 @media (min-width: 40rem) {
@@ -280,7 +288,12 @@ td {
 	.clist-container h1 {
 		font-size: 3.2rem;
 	}
+
+	.portfolio-description h1 {
+		font-size: 0.95rem;
+	}
 }
+
 
 @media (min-width: 60rem) {
 	.title-container {
@@ -371,28 +384,37 @@ td {
 
 	.portfolio-container {
 		flex-direction: row;
+    flex-wrap: wrap;
 		margin-top: 2.5em;
 		height: 100%;
-		padding: 3em 2em;
+		padding: 3em 1em;
 	}
 
-	.portfolio-item img {
-	  display: block;
+	.portfolio-description {
+		transform: translateY(150%);
+		transition: all ease-in-out 500ms;
+	}
+
+	.portfolio-description h1 {
+		font-size: 1rem;
 	}
 
 	.portfolio-item {
-		width: 100%;
+		flex-basis: 40%;
 		overflow: hidden;
 	}
 
-	/* .portfolio-description {
-		transform: translateY(150%);
+  figure:first-child {
+		margin-inline-end: 0rem;
 	}
 
-	.port-item:hover .port-description {
+  figure:nth-child(2) {
+		margin-inline-start: 0rem;
+	}
+
+	.portfolio-item:hover .portfolio-description {
 		transform: translateY(0%);
 	}
-} */
 
 	.pfooter {
 		position: sticky;
@@ -515,7 +537,7 @@ nav a:focus {
 /* ====================button=================== */
 .button {
   display: inline-block;
-	/* font-weight: 400; */
+	font-weight: 400;
   text-decoration: none;
   text-transform: uppercase;
 	border-color: rgba(150, 21, 219, 0.75);
@@ -563,24 +585,52 @@ nav a:focus {
 	border-color: #D2D2D3;
 }
 
+
 @media (min-width: 20rem) {
 	.button {
 		font-size: 1.1rem;
 	}
 }
 
- .pbutton {
-	 font-size: 0.5rem;
- }
+@media (max-width: 30rem) {
+	.pbutton {
+		font-size: 0.2rem;
+		padding: 0.2em;
+	}
+}
+
+@media (min-width: 30rem) {
+	.pbutton {
+		font-size: 0.5rem;
+		padding: 0.3em;
+	}
+}
 
 @media (min-width: 40rem) {
 	.button {
 		font-size: 1.2rem;
+	}
+
+	.pbutton {
+		font-size: 0.65rem;
+		padding: 0.3em;
+	}
+}
+
+@media (min-width: 50rem) {
+	.pbutton {
+		font-size: 0.8rem;
+		padding: 0.5em;
 	}
 }
 
 @media (min-width: 70rem) {
 	.button {
 		font-size: 1.5rem;
+	}
+
+	.pbutton {
+		font-size: 1rem;
+		padding: 0.8em;
 	}
 }
